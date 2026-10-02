@@ -36,6 +36,10 @@ jobs:
       - name: Run ESLint
         run: npm run lint
 
+      # Ejecuta los tests
+      - name: Run tests
+        run: npm run test
+
       # Comprueba TypeScript y genera el build de producción
       - name: Build project
         run: npm run build
