@@ -1,5 +1,7 @@
 name: Frontend CI
 
+# Ejecutar el pipeline cuando hacemos push a main
+# o cuando abrimos una Pull Request hacia main
 on:
   push:
     branches:
@@ -11,20 +13,29 @@ on:
 
 jobs:
   build:
+    # GitHub crea una máquina Ubuntu temporal
     runs-on: ubuntu-latest
 
     steps:
+      # Descarga el código del repositorio
       - name: Checkout repository
         uses: actions/checkout@v7
 
+      # Instala Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: npm
 
+      # Instala las dependencias usando package-lock.json
       - name: Install dependencies
         run: npm ci
 
+      # Comprueba la calidad del código
+      - name: Run ESLint
+        run: npm run lint
+
+      # Comprueba TypeScript y genera el build de producción
       - name: Build project
         run: npm run build

@@ -1,9 +1,9 @@
 import type { Task } from "../../types/Task";
-const priority = {
-  low: "bg-sky-50 text-sky-700",
-  medium: "bg-amber-50 text-amber-700",
-  high: "bg-rose-50 text-rose-700",
-};
+// const priority = {
+//   low: "bg-sky-50 text-sky-700",
+//   medium: "bg-amber-50 text-amber-700",
+//   high: "bg-rose-50 text-rose-700",
+// };
 export default function TaskCard({ task }: { task: Task }) {
   return (
     <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
