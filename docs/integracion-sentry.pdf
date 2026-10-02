@@ -1,0 +1,675 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 16 /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R 24 0 R 26 0 R 28 0 R 30 0 R 32 0 R 34 0 R 36 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 2456 >>
+stream
+0.36 0.24 0.72 rg 48 790 34 4 re f
+BT /F2 8 Tf 0.36 0.24 0.72 rg 1 0 0 1 94.00 789.00 Tm (PROJECTFLOW  /  DOCUMENTACIÓN TÉCNICA) Tj ET
+BT /F2 22 Tf 0.16 0.12 0.32 rg 1 0 0 1 48.00 750.00 Tm (Integración de Sentry) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 702.10 Tm (ProjectFlow · React, Vite, Axios y TanStack Query) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 676.70 Tm (Documento técnico y guía de mantenimiento Estado del código revisado: 2 de octubre de 2026) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 652.20 Tm (Este documento explica qué se ha integrado, cómo funciona, por qué se eligió cada mecanismo y cómo) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 637.70 Tm (comprobarlo. Describe el código del proyecto, no una configuración genérica de Sentry.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 613.20 Tm (La integración actual captura errores de React, rutas y operaciones gestionadas con TanStack Query. Mide) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 598.70 Tm (navegación y peticiones desde el navegador y adjunta una copia depurada del payload cuando una petición) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 584.20 Tm (Axios falla.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 559.70 Tm (La configuración final incluye errores HTTP 4xx, como el 401 que impedía crear productos. Las cancelaciones) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 545.20 Tm (voluntarias se excluyen. Los errores de autenticación se pueden registrar, pero sus payloads completos se) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 530.70 Tm (omiten.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 506.20 Tm (No se han incluido valores reales del archivo .env, tokens, contraseñas ni información de usuarios. Los ejemplos) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 491.70 Tm (de eventos son ilustrativos, no exportaciones del panel.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 467.20 Tm (Lectura recomendada: primero las secciones 1 a 4 para entender el sistema; después las secciones 5 a 10 para) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 452.70 Tm (revisar implementación y privacidad; finalmente las secciones 11 a 14 para validar y mantenerlo.) Tj ET
+0.85 0.86 0.90 RG 0.5 w 48 46 m 547 46 l S
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 48.00 31.00 Tm (Integración de Sentry · 02/10/2026) Tj ET
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 506.00 31.00 Tm (1 / 16) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 2625 >>
+stream
+0.36 0.24 0.72 rg 48 790 34 4 re f
+BT /F2 8 Tf 0.36 0.24 0.72 rg 1 0 0 1 94.00 789.00 Tm (PROJECTFLOW  /  DOCUMENTACIÓN TÉCNICA) Tj ET
+BT /F2 22 Tf 0.16 0.12 0.32 rg 1 0 0 1 48.00 750.00 Tm (Índice y alcance del documento) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 702.10 Tm (1. Qué se ha integrado y qué significa «todas las peticiones» 2. Arquitectura y recorrido completo de un fallo 3.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 687.60 Tm (Inicialización y configuración de Sentry 4. Captura centralizada de consultas y mutaciones 5. Clasificación,) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 673.10 Tm (contexto y prevención de duplicados 6. Errores de React, rutas y recuperación visual 7. Rendimiento,) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 658.60 Tm (navegación y peticiones HTTP 8. Usuario autenticado y ciclo de sesión 9. Payloads: extracción, exclusiones y) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 644.10 Tm (límites 10. Privacidad y límites de las garantías actuales 11. Ejemplo completo: crear un producto devuelve 401) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 629.60 Tm (12. Pruebas realizadas y verificaciones pendientes 13. Diagnóstico y procedimiento de comprobación 14.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 615.10 Tm (Inventario, mantenimiento y decisiones de diseño) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 590.60 Tm (Cada sección comienza en una página nueva. El documento distingue tres conceptos: lo implementado en) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 576.10 Tm (código, lo probado localmente y lo que necesita validación en un navegador o en el proyecto remoto de Sentry.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 551.60 Tm (Fuentes utilizadas: módulos de src/infrastucture/monitoring, entrada React, configuración del router, hooks de) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 537.10 Tm (presentación, repositorios Axios y tests/sentry.test.mjs. Se conserva «infrastucture» porque es el nombre real de) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 522.60 Tm (la carpeta del proyecto.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 498.10 Tm (La documentación corresponde a esta instantánea. Si se cambian filtros, hooks, rutas o políticas de payload, se) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 483.60 Tm (debe actualizar junto con el código.) Tj ET
+0.85 0.86 0.90 RG 0.5 w 48 46 m 547 46 l S
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 48.00 31.00 Tm (Integración de Sentry · 02/10/2026) Tj ET
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 506.00 31.00 Tm (2 / 16) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 3908 >>
+stream
+0.36 0.24 0.72 rg 48 790 34 4 re f
+BT /F2 8 Tf 0.36 0.24 0.72 rg 1 0 0 1 94.00 789.00 Tm (PROJECTFLOW  /  DOCUMENTACIÓN TÉCNICA) Tj ET
+BT /F2 22 Tf 0.16 0.12 0.32 rg 1 0 0 1 48.00 750.00 Tm (1. Qué se ha integrado) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 702.10 Tm (Objetivo) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 676.70 Tm (Permitir investigar qué operación falló, con qué estado HTTP, en qué ruta y para qué ID de usuario, sin adjuntar) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 662.20 Tm (indiscriminadamente la configuración de Axios. Cuando existe un cuerpo JSON de petición, se añade una copia) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 647.70 Tm (limitada y depurada para ayudar a reproducir el problema.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 623.20 Tm (Tres clases de información) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 597.80 Tm (Una incidencia procede de una excepción enviada a Sentry. Varios eventos pueden agruparse en una misma) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 583.30 Tm (incidencia; no debe esperarse una tarjeta nueva por cada clic fallido.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 558.80 Tm (Una traza describe trabajo y tiempos: carga de página, navegación y operaciones instrumentadas del) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 544.30 Tm (navegador. Una petición correcta puede participar en una traza sin ser un error.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 519.80 Tm (Un breadcrumb es contexto anterior a un evento, por ejemplo una navegación o metadatos HTTP. No equivale a) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 505.30 Tm (una incidencia independiente ni a un registro exhaustivo y permanente de todas las acciones.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 480.80 Tm (Cobertura actual) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 455.40 Tm (Los hooks existentes cubren productos, tareas, categorías, login y registro. Los fallos de sus consultas y) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 440.90 Tm (mutaciones pasan por una caché global. Las fronteras de React y del router cubren errores de renderizado y) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 426.40 Tm (rutas. La entrada React tiene manejadores para errores no capturados y recuperables.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 401.90 Tm (También permanecen las integraciones por defecto del SDK; no se han sustituido por una lista vacía. La) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 387.40 Tm (aplicación añade instrumentación de navegación y filtros antes del envío.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 362.90 Tm (Qué NO significa «todas») Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 337.50 Tm (No hay un interceptor de respuesta Axios que reporte cada petición. Una llamada nueva ejecutada fuera de) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 323.00 Tm (TanStack Query y cuyo error se capture y silencie localmente no llegará por esta vía. Tampoco se convierte) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 308.50 Tm (automáticamente cada acción de interfaz, validación o cambio de estado en una incidencia.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 284.00 Tm (No se instrumentó el servidor. Si una API responde 200 con un objeto que representa un fallo de negocio, la) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 269.50 Tm (aplicación tendría que convertirlo explícitamente en error para que se detecte como tal. Una incidencia tampoco) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 255.00 Tm (corrige el token ni vuelve válida una operación rechazada.) Tj ET
+0.85 0.86 0.90 RG 0.5 w 48 46 m 547 46 l S
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 48.00 31.00 Tm (Integración de Sentry · 02/10/2026) Tj ET
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 506.00 31.00 Tm (3 / 16) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 3844 >>
+stream
+0.36 0.24 0.72 rg 48 790 34 4 re f
+BT /F2 8 Tf 0.36 0.24 0.72 rg 1 0 0 1 94.00 789.00 Tm (PROJECTFLOW  /  DOCUMENTACIÓN TÉCNICA) Tj ET
+BT /F2 22 Tf 0.16 0.12 0.32 rg 1 0 0 1 48.00 750.00 Tm (2. Arquitectura y recorrido de un fallo) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 702.10 Tm (Flujo principal de datos) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 676.70 Tm (Interfaz -> hook -> caso de uso -> repositorio -> instancia Axios -> API.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 652.20 Tm (Si la promesa falla: QueryCache o MutationCache -> reportError -> contexto depurado ->) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 637.70 Tm (Sentry.captureException -> filterEvent -> transporte del SDK -> proyecto Sentry.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 613.20 Tm (La interfaz conserva su propio estado de error y sus mensajes. La observabilidad es un efecto adicional del) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 598.70 Tm (fallo; no reemplaza las responsabilidades de presentación, dominio o comunicación HTTP.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 574.20 Tm (Por qué se centralizó) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 548.80 Tm (Añadir captureException en cada componente, caso de uso y repositorio produciría repetición y facilitaría enviar) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 534.30 Tm (varias veces la misma excepción. Centralizar en las cachés cubre los hooks existentes con un mismo criterio,) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 519.80 Tm (sin acoplar el dominio al SDK.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 495.30 Tm (Los casos de uso, como categoryUseCases.ts, siguen encargándose de las operaciones de la aplicación. No) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 480.80 Tm (necesitan importar Sentry para cada llamada: el hook que los ejecuta ya participa en la infraestructura común.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 456.30 Tm (Responsabilidades de los módulos) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 430.90 Tm (sentry.ts inicializa el cliente, configura trazas y conecta la sesión. queryClient.ts instala callbacks globales de) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 416.40 Tm (errores. errors.ts decide cómo convertir el fallo en un evento y añade etiquetas y contexto.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 391.90 Tm (payload.ts extrae y depura el cuerpo de una petición Axios. privacy.ts filtra eventos, breadcrumbs y spans justo) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 377.40 Tm (antes de enviarlos. ErrorRecovery.tsx decide qué mostrar cuando falla el renderizado y comunica el error de esa) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 362.90 Tm (frontera.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 338.40 Tm (Aislamiento por evento) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 313.00 Tm (reportError utiliza withScope. Las etiquetas de recurso, operación y origen, así como el contexto de la petición,) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 298.50 Tm (se aplican a esa captura. No se dejan como estado global para que otro evento herede por accidente el payload) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 284.00 Tm (de una operación anterior.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 259.50 Tm (El usuario sí pertenece al contexto de sesión y se sincroniza por separado. La misma infraestructura permite) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 245.00 Tm (investigar varias operaciones del usuario sin incluir su token de acceso.) Tj ET
+0.85 0.86 0.90 RG 0.5 w 48 46 m 547 46 l S
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 48.00 31.00 Tm (Integración de Sentry · 02/10/2026) Tj ET
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 506.00 31.00 Tm (4 / 16) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Length 3991 >>
+stream
+0.36 0.24 0.72 rg 48 790 34 4 re f
+BT /F2 8 Tf 0.36 0.24 0.72 rg 1 0 0 1 94.00 789.00 Tm (PROJECTFLOW  /  DOCUMENTACIÓN TÉCNICA) Tj ET
+BT /F2 22 Tf 0.16 0.12 0.32 rg 1 0 0 1 48.00 750.00 Tm (3. Inicialización y configuración) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 702.10 Tm (Orden de arranque) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 676.70 Tm (main.tsx importa primero el módulo de monitorización. Este inicializa Sentry antes de que App importe y cree el) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 662.20 Tm (router instrumentado. El orden importa porque el seguimiento debe estar preparado al construir el router y) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 647.70 Tm (arrancar la interfaz.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 623.20 Tm (Se usa @sentry/react, declarado en package.json con el rango ^11.2.0. La integración se ajustó a los tipos) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 608.70 Tm (instalados: se usa dataCollection y el formato de spans con name y attributes. La opción anterior sendDefaultPii) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 594.20 Tm (no forma parte de esta configuración.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 569.70 Tm (Variables y activación) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 544.30 Tm (El DSN se obtiene de import.meta.env.VITE_SENTRY_DSN. Identifica el destino de los eventos. enabled) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 529.80 Tm (depende de Boolean\(dsn\): si falta o es una cadena vacía, se desactiva el envío. Esto no valida que un DSN no) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 515.30 Tm (vacío sea correcto.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 490.80 Tm (El entorno procede de import.meta.env.MODE. Permite separar los eventos según el modo de Vite. No se ha) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 476.30 Tm (configurado una release propia ni un vínculo automático con commits o despliegues.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 451.80 Tm (Parámetros principales) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 426.40 Tm (tracesSampleRate vale 1 en desarrollo y 0.1 fuera de desarrollo. tracePropagationTargets es una lista vacía.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 411.90 Tm (normalizeDepth es 10 para que el SDK preserve estructuras anidadas del payload que ya han sido limitadas por) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 397.40 Tm (nuestro filtro.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 372.90 Tm (La profundidad 10 no significa que se permita extraer un payload sin límites: sanitizePayload limita su propia) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 358.40 Tm (recursión y volumen antes de entregarlo a Sentry.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 333.90 Tm (Recolección automática) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 308.50 Tm (dataCollection desactiva userInfo, cookies, httpHeaders, httpBodies, urlQueryParams y stackFrameVariables.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 294.00 Tm (Los cuerpos no se recopilan automáticamente: existe una excepción explícita y controlada que copia el payload) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 279.50 Tm (depurado al contexto request_payload.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 255.00 Tm (No se habilitó Session Replay, grabación de pantalla ni un registro de todos los formularios. Tampoco se) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 240.50 Tm (configuró carga automática de source maps. No hay que colocar un token privado de Sentry en variables VITE_:) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 226.00 Tm (este código solo necesita el DSN del cliente.) Tj ET
+0.85 0.86 0.90 RG 0.5 w 48 46 m 547 46 l S
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 48.00 31.00 Tm (Integración de Sentry · 02/10/2026) Tj ET
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 506.00 31.00 Tm (5 / 16) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 13 0 R >>
+endobj
+15 0 obj
+<< /Length 4107 >>
+stream
+0.36 0.24 0.72 rg 48 790 34 4 re f
+BT /F2 8 Tf 0.36 0.24 0.72 rg 1 0 0 1 94.00 789.00 Tm (PROJECTFLOW  /  DOCUMENTACIÓN TÉCNICA) Tj ET
+BT /F2 22 Tf 0.16 0.12 0.32 rg 1 0 0 1 48.00 750.00 Tm (4. Consultas y mutaciones) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 702.10 Tm (QueryClient compartido) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 676.70 Tm (QueryProvider crea una instancia de QueryClient mediante createQueryClient y la comparte con la aplicación.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 662.20 Tm (La QueryCache instala onError para consultas; MutationCache lo instala para mutaciones.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 637.70 Tm (El callback de una consulta se ejecuta cuando la consulta termina en error después de sus reintentos. El módulo) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 623.20 Tm (no impone un número propio de reintentos: respeta la configuración de TanStack Query o la de cada operación.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 608.70 Tm (La prueba local establece explícitamente dos reintentos para verificar este comportamiento.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 584.20 Tm (La captura en la caché evita que cada componente que observa la misma consulta tenga que reportar el fallo) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 569.70 Tm (por separado. Las mutaciones conservan sus callbacks locales, por ejemplo los que presentan un mensaje de) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 555.20 Tm (error en un formulario.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 530.70 Tm (Etiquetas instaladas) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 505.30 Tm (Productos: resource=products; operation=list, detail, create, update o delete.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 480.80 Tm (Tareas: resource=tasks; operation=list, create o update. La existencia de otros métodos en un repositorio no) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 466.30 Tm (implica que haya un hook instrumentado para ellos.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 441.80 Tm (Categorías: resource=categories; operation=list o create.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 417.30 Tm (Autenticación: resource=auth; operation=login o register.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 392.80 Tm (La caché añade source=query o source=mutation. Se usan valores estables y pequeños; no se utilizan variables) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 378.30 Tm (del formulario ni claves completas de consulta como etiquetas.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 353.80 Tm (Por qué no se envían las variables de mutate) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 328.40 Tm (El payload se obtiene de error.config.data en Axios. Eso permite describir el cuerpo que la capa HTTP preparó y) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 313.90 Tm (evita copiar ciegamente las variables de una mutación, que pueden incluir IDs, objetos auxiliares o credenciales) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 299.40 Tm (no destinadas a enviarse.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 274.90 Tm (Si una mutación falla antes de construir una petición Axios, habrá un error, pero no un payload HTTP extraído) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 260.40 Tm (automáticamente. Las consultas GET normalmente no llevan cuerpo; en ese caso no se crea request_payload.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 235.90 Tm (Para añadir una operación nueva, debe usar el QueryClient compartido y asignar meta.resource y) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 221.40 Tm (meta.operation. Si se crea otro QueryClient sin estos callbacks, la operación no tendrá esta captura) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 206.90 Tm (centralizada.) Tj ET
+0.85 0.86 0.90 RG 0.5 w 48 46 m 547 46 l S
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 48.00 31.00 Tm (Integración de Sentry · 02/10/2026) Tj ET
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 506.00 31.00 Tm (6 / 16) Tj ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 15 0 R >>
+endobj
+17 0 obj
+<< /Length 4131 >>
+stream
+0.36 0.24 0.72 rg 48 790 34 4 re f
+BT /F2 8 Tf 0.36 0.24 0.72 rg 1 0 0 1 94.00 789.00 Tm (PROJECTFLOW  /  DOCUMENTACIÓN TÉCNICA) Tj ET
+BT /F2 22 Tf 0.16 0.12 0.32 rg 1 0 0 1 48.00 750.00 Tm (5. Tratamiento de errores y duplicados) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 702.10 Tm (Política final) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 676.70 Tm (Se reportan los errores HTTP 4xx y 5xx, los fallos de red sin respuesta y otros errores de JavaScript que lleguen) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 662.20 Tm (a reportError. Se excluyen las cancelaciones reconocidas por Axios mediante isCancel.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 637.70 Tm (Al principio se descartaban los 4xx. Esa decisión explicaba por qué el 401 de crear productos no aparecía como) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 623.20 Tm (incidencia. La política se cambió por petición expresa: ahora también se capturan 400, 401, 403, 404, 422 y 429,) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 608.70 Tm (entre otros.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 584.20 Tm (Registrar un 401 de login no implica registrar sus credenciales: la política de captura de errores y la política de) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 569.70 Tm (captura de payloads son independientes.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 545.20 Tm (Conversión segura de Axios) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 519.80 Tm (No se entrega el AxiosError completo a captureException desde reportError. Se crea un Error con mensaje) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 505.30 Tm (HTTP seguido del código, o Network request failed cuando no hay estado disponible. Se intenta conservar la) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 490.80 Tm (pila sustituyendo su primera línea.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 466.30 Tm (Esto evita adjuntar por accidente config, cabeceras o respuesta. El contexto http contiene method, path y status.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 451.80 Tm (El payload, si es admisible, se añade por separado y depurado.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 427.30 Tm (Los errores normales conservan su objeto Error. Valores lanzados que no sean Error se convierten en un) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 412.80 Tm (mensaje genérico: Unexpected non-Error failure. No se serializa arbitrariamente lo que se haya lanzado.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 388.30 Tm (Deducción de la ruta) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 362.90 Tm (cleanUrl devuelve solo pathname, elimina consulta y fragmento y sustituye segmentos enteramente numéricos) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 348.40 Tm (por :id. Por ejemplo, una URL absoluta terminada en /products/123?token=... se representa como /products/:id.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 323.90 Tm (Alcance real de la deduplicación) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 298.50 Tm (Un WeakSet recuerda los objetos ya reportados. Si el mismo objeto vuelve a pasar por reportError, no se) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 284.00 Tm (captura otra vez. Ayuda con efectos repetidos y con un error compartido.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 259.50 Tm (No compara mensajes ni códigos HTTP. Dos peticiones distintas que produzcan objetos diferentes pueden) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 245.00 Tm (generar dos eventos, aunque ambos digan HTTP 401. Tampoco garantiza deduplicación universal de rutas que) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 230.50 Tm (envían directamente al SDK. El agrupamiento remoto de eventos es una función distinta y no se ha) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 216.00 Tm (personalizado con fingerprints.) Tj ET
+0.85 0.86 0.90 RG 0.5 w 48 46 m 547 46 l S
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 48.00 31.00 Tm (Integración de Sentry · 02/10/2026) Tj ET
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 506.00 31.00 Tm (7 / 16) Tj ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 17 0 R >>
+endobj
+19 0 obj
+<< /Length 3685 >>
+stream
+0.36 0.24 0.72 rg 48 790 34 4 re f
+BT /F2 8 Tf 0.36 0.24 0.72 rg 1 0 0 1 94.00 789.00 Tm (PROJECTFLOW  /  DOCUMENTACIÓN TÉCNICA) Tj ET
+BT /F2 22 Tf 0.16 0.12 0.32 rg 1 0 0 1 48.00 750.00 Tm (6. React, rutas y recuperación visual) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 702.10 Tm (Frontera de la raíz) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 676.70 Tm (RootErrorBoundary envuelve QueryProvider y App. Cuando un descendiente falla durante el renderizado,) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 662.20 Tm (cambia a una pantalla de recuperación y comunica el error con source=react-root.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 637.70 Tm (La pantalla informa de que no se pudo mostrar la página y ofrece Reintentar, que recarga el navegador, y Volver) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 623.20 Tm (al inicio. El mensaje técnico y los datos de monitorización no se muestran al usuario final.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 598.70 Tm (Frontera del router) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 573.30 Tm (Las rutas de login y registro y la rama protegida tienen errorElement con RouteErrorRecovery. Los errores de) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 558.80 Tm (esa rama pueden ser consumidos por React Router antes de alcanzar la frontera exterior; por eso se necesita) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 544.30 Tm (una captura dentro del router.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 519.80 Tm (useRouteError obtiene el fallo. Si es una respuesta de error de ruta, se convierte en Error con mensaje Route) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 505.30 Tm (HTTP y su estado. Se conserva una instancia estable mediante useMemo y se reporta desde useEffect con) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 490.80 Tm (source=router. También se incluyen los 4xx de ruta.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 466.30 Tm (Manejadores de la raíz React) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 440.90 Tm (createRoot incluye onUncaughtError, etiquetado react-uncaught, y onRecoverableError, etiquetado) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 426.40 Tm (react-recoverable. No se añade una captura paralela en onCaughtError: las fronteras ya son responsables de) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 411.90 Tm (sus errores manejados.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 387.40 Tm (Qué no cubre una frontera por sí sola) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 362.00 Tm (Una frontera de renderizado no es un sustituto de la gestión de errores de peticiones asíncronas ni de todos los) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 347.50 Tm (handlers de eventos. Los errores de API se cubren con QueryCache y MutationCache. Los fallos globales no) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 333.00 Tm (manejados dependen de los mecanismos del SDK y del navegador.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 308.50 Tm (ErrorInfo se recibe en componentDidCatch, pero no se adjunta expresamente su componentStack al contexto.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 294.00 Tm (El comportamiento visual y la ausencia de duplicados bajo todas las secuencias de navegación no se han) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 279.50 Tm (comprobado mediante una prueba automatizada de navegador en esta sesión.) Tj ET
+0.85 0.86 0.90 RG 0.5 w 48 46 m 547 46 l S
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 48.00 31.00 Tm (Integración de Sentry · 02/10/2026) Tj ET
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 506.00 31.00 Tm (8 / 16) Tj ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 19 0 R >>
+endobj
+21 0 obj
+<< /Length 4003 >>
+stream
+0.36 0.24 0.72 rg 48 790 34 4 re f
+BT /F2 8 Tf 0.36 0.24 0.72 rg 1 0 0 1 94.00 789.00 Tm (PROJECTFLOW  /  DOCUMENTACIÓN TÉCNICA) Tj ET
+BT /F2 22 Tf 0.16 0.12 0.32 rg 1 0 0 1 48.00 750.00 Tm (7. Rendimiento y navegación) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 702.10 Tm (Integración del router) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 676.70 Tm (Se usa reactRouterBrowserTracingIntegration con useEffect, useLocation, useNavigationType,) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 662.20 Tm (createRoutesFromChildren y matchRoutes. La creación del router se envuelve con wrapCreateBrowserRouter.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 637.70 Tm (La combinación permite instrumentar las navegaciones y asociar trabajo del navegador a trazas. No se ha) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 623.20 Tm (escrito un span manual alrededor de cada caso de uso ni de cada botón.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 598.70 Tm (Muestreo) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 573.30 Tm (En desarrollo se solicita una tasa de trazas de 1; en producción, 0.1. Esto reduce el volumen de rendimiento en) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 558.80 Tm (producción y mantiene mayor visibilidad durante la depuración local.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 534.30 Tm (El 10 % corresponde al muestreo de trazas, no a una promesa de que exactamente una de cada diez peticiones) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 519.80 Tm (aparezca. Varias peticiones pueden pertenecer a una misma traza. Tampoco es una tasa de muestreo de) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 505.30 Tm (errores: no se ha definido sampleRate para reducir la captura de excepciones.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 480.80 Tm (La entrega real sigue dependiendo del estado del SDK, red, límites del proyecto y posibles bloqueos del) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 466.30 Tm (navegador. Un porcentaje de configuración no garantiza recepción remota de cada evento elegible.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 441.80 Tm (Sin propagación hacia el backend) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 416.40 Tm (tracePropagationTargets=[] evita que esta configuración añada cabeceras de propagación de trazas a las) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 401.90 Tm (peticiones. Se decidió así porque no se había confirmado que el backend aceptara esas cabeceras por CORS.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 377.40 Tm (Se puede medir desde el navegador sin crear una traza distribuida completa del servidor. No hay spans de base) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 362.90 Tm (de datos, middleware o ejecución interna del backend aportados por esta intervención.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 338.40 Tm (Depuración de spans) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 313.00 Tm (filterSpan limpia los atributos url.full, http.url y http.target. También depura partes del nombre cuando contienen) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 298.50 Tm (una URL HTTP o una consulta. En la versión instalada se trabaja con name y attributes, no con description y) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 284.00 Tm (data.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 259.50 Tm (Las peticiones envelope observadas con estado 200 indican que un envío al servicio respondió correctamente;) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 245.00 Tm (por sí solas no demuestran que contuviera una excepción. El sobre puede transportar otros tipos de) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 230.50 Tm (información, como rendimiento.) Tj ET
+0.85 0.86 0.90 RG 0.5 w 48 46 m 547 46 l S
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 48.00 31.00 Tm (Integración de Sentry · 02/10/2026) Tj ET
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 506.00 31.00 Tm (9 / 16) Tj ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 21 0 R >>
+endobj
+23 0 obj
+<< /Length 3743 >>
+stream
+0.36 0.24 0.72 rg 48 790 34 4 re f
+BT /F2 8 Tf 0.36 0.24 0.72 rg 1 0 0 1 94.00 789.00 Tm (PROJECTFLOW  /  DOCUMENTACIÓN TÉCNICA) Tj ET
+BT /F2 22 Tf 0.16 0.12 0.32 rg 1 0 0 1 48.00 750.00 Tm (8. Usuario y sesión) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 702.10 Tm (Identidad mínima) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 676.70 Tm (Sentry.setUser recibe únicamente un objeto con id convertido a cadena. No se añade el nombre, email, rol ni) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 662.20 Tm (token desde la sincronización de sesión.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 637.70 Tm (El identificador permite relacionar incidencias con una cuenta interna. Sigue siendo un dato que identifica a una) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 623.20 Tm (cuenta dentro del sistema: «solo ID» no equivale a anonimato absoluto.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 598.70 Tm (Sincronización inicial) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 573.30 Tm (El módulo consulta useAuthStore.getState\(\).user al inicializarse. Así aplica el usuario disponible al arrancar,) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 558.80 Tm (incluida la sesión que el store haya restaurado en ese momento.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 534.30 Tm (Después se suscribe a cambios del store. Al iniciar sesión o cambiar el usuario, vuelve a establecer el ID.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 519.80 Tm (Cuando user pasa a null, ejecuta Sentry.setUser\(null\), eliminando esa asociación para futuros eventos.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 495.30 Tm (La suscripción vuelve a leer el estado en cada actualización; no se transmite el store completo. Los eventos ya) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 480.80 Tm (enviados no se modifican ni se borran al cerrar sesión.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 456.30 Tm (Desarrollo con recarga de módulos) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 430.90 Tm (Si import.meta.hot está disponible, se registra la limpieza de la suscripción con dispose. Evita acumular) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 416.40 Tm (suscripciones a Zustand cuando el módulo se reemplaza durante desarrollo.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 391.90 Tm (Segunda defensa antes del envío) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 366.50 Tm (filterEvent reconstruye event.user conservando solo id si existe. Esto limita datos adicionales que pudieran) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 352.00 Tm (llegar a ese campo por otras vías de eventos de error.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 327.50 Tm (Alcance y verificación) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 302.10 Tm (Se utiliza el store de src/store/useAuthStore.ts, el mismo que usa la instancia Axios para obtener el token. No se) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 287.60 Tm (lee el token para construir el usuario de Sentry.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 263.10 Tm (La prueba de filtros verifica que un evento con id y email conserve únicamente el ID. La restauración visual de) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 248.60 Tm (sesión, el inicio de sesión real y el cierre de sesión en el navegador necesitan comprobación funcional; no) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 234.10 Tm (deben confundirse con esa prueba unitaria del filtro.) Tj ET
+0.85 0.86 0.90 RG 0.5 w 48 46 m 547 46 l S
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 48.00 31.00 Tm (Integración de Sentry · 02/10/2026) Tj ET
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 506.00 31.00 Tm (10 / 16) Tj ET
+endstream
+endobj
+24 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 23 0 R >>
+endobj
+25 0 obj
+<< /Length 4509 >>
+stream
+0.36 0.24 0.72 rg 48 790 34 4 re f
+BT /F2 8 Tf 0.36 0.24 0.72 rg 1 0 0 1 94.00 789.00 Tm (PROJECTFLOW  /  DOCUMENTACIÓN TÉCNICA) Tj ET
+BT /F2 22 Tf 0.16 0.12 0.32 rg 1 0 0 1 48.00 750.00 Tm (9. Payloads: qué se adjunta exactamente) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 702.10 Tm (Extracción) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 676.70 Tm (getRequestPayload solo actúa sobre errores reconocidos como Axios. Lee config.data. Si no existe, es null o es) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 662.20 Tm (una cadena vacía, no añade contexto. Un objeto puede procesarse directamente; una cadena se intenta) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 647.70 Tm (interpretar como JSON.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 623.20 Tm (Las cadenas que superan 20.000 caracteres se sustituyen por [Payload too large]. Si no son JSON, se) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 608.70 Tm (sustituyen por [Non-JSON payload omitted]. No se suben archivos ni se transforma automáticamente FormData) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 594.20 Tm (en sus campos.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 569.70 Tm (El resultado se guarda en contexts.request_payload.body. Es una copia para el evento: no modifica el cuerpo) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 555.20 Tm (original ni la petición que usa la aplicación.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 530.70 Tm (Exclusión de autenticación) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 505.30 Tm (Se omite todo el payload si meta.resource es auth. También si la URL contiene un segmento auth, login,) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 490.80 Tm (register, signin, signup o refresh según el patrón implementado. Esto cubre las rutas actuales /user/login y) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 476.30 Tm (/user/register, incluso si la captura no dispone de meta.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 451.80 Tm (Una futura ruta de autenticación con otro nombre debe etiquetarse como auth o añadirse a la política. No existe) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 437.30 Tm (reconocimiento semántico automático de todos los endpoints posibles.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 412.80 Tm (Campos sensibles) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 387.40 Tm (Las claves se normalizan retirando caracteres no alfanuméricos y se comparan sin distinguir mayúsculas. Se) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 372.90 Tm (filtran coincidencias con password, passwd, pwd, token, authorization, cookie, secret, apikey, credential y email.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 348.40 Tm (Por ello access_token y api_key quedan filtrados. El valor se reemplaza por [Filtered]. También se filtran) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 333.90 Tm (cadenas que parecen contener un Bearer token o un JWT conforme al patrón actual.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 309.40 Tm (Límites de tamaño y estructura) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 284.00 Tm (Cada cadena conservada se corta a 500 caracteres. Cada array y objeto se limita a 50 elementos o) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 269.50 Tm (propiedades. La recursión se corta por encima de profundidad 6 y hay un presupuesto compartido de 200) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 255.00 Tm (visitas; al agotarse se usa [Truncated].) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 230.50 Tm (Referencias repetidas a objetos se marcan [Circular], aunque no siempre formen un ciclo real. Solo se admiten) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 216.00 Tm (objetos planos o sin prototipo, además de arrays y valores básicos. Otros objetos se marcan [Unsupported) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 201.50 Tm (payload]; tipos no admitidos se marcan [Omitted].) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 177.00 Tm (Estos límites contienen el volumen; no constituyen un límite exacto en bytes del evento completo, ni evitan por sí) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 162.50 Tm (solos cualquier contenido personal escrito en texto libre.) Tj ET
+0.85 0.86 0.90 RG 0.5 w 48 46 m 547 46 l S
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 48.00 31.00 Tm (Integración de Sentry · 02/10/2026) Tj ET
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 506.00 31.00 Tm (11 / 16) Tj ET
+endstream
+endobj
+26 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 25 0 R >>
+endobj
+27 0 obj
+<< /Length 4408 >>
+stream
+0.36 0.24 0.72 rg 48 790 34 4 re f
+BT /F2 8 Tf 0.36 0.24 0.72 rg 1 0 0 1 94.00 789.00 Tm (PROJECTFLOW  /  DOCUMENTACIÓN TÉCNICA) Tj ET
+BT /F2 22 Tf 0.16 0.12 0.32 rg 1 0 0 1 48.00 750.00 Tm (10. Privacidad: defensas y límites) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 702.10 Tm (Antes de recolectar) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 676.70 Tm (dataCollection reduce la recolección automática de información de usuario, cookies, cabeceras, cuerpos HTTP,) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 662.20 Tm (consultas de URL y variables de pila. La integración de breadcrumbs desactiva DOM y el filtro descarta) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 647.70 Tm (categorías console y ui.*.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 623.20 Tm (Antes de enviar) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 597.80 Tm (filterBreadcrumb conserva únicamente algunos campos HTTP y de navegación; limpia sus URLs y elimina) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 583.30 Tm (message. filterEvent elimina extra y reconstruye request con solo url depurada y method. Reconstruye también) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 568.80 Tm (user con solo ID.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 544.30 Tm (Si el evento original es Axios, filterEvent sanea el mensaje de excepción y puede añadir el payload depurado.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 529.80 Tm (Es una defensa para capturas globales que no pasaron por reportError. Los eventos que sí pasaron por) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 515.30 Tm (reportError ya llevan una excepción nueva y un contexto preparado.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 490.80 Tm (filterSpan limpia determinados atributos URL de los spans de rendimiento. No se configura una captura general) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 476.30 Tm (de cuerpos en las trazas: los payloads se añaden al evento de error.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 451.80 Tm (Lo que estas defensas no garantizan) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 426.40 Tm (El filtro de claves no detecta toda información personal. Un campo description puede contener un teléfono,) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 411.90 Tm (dirección, nombre o secreto escrito libremente y quedar conservado. El patrón de cadenas reconoce ciertos) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 397.40 Tm (formatos de tokens, no todos los secretos posibles.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 372.90 Tm (cleanUrl elimina query, fragmento y segmentos numéricos, pero no convierte automáticamente todos los UUID,) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 358.40 Tm (nombres o emails en rutas anónimas. filterEvent no reescribe todos los mensajes de Error normales ni depura) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 343.90 Tm (recursivamente todos los contextos ajenos al módulo.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 319.40 Tm (El sanitizador limita la estructura, pero las claves mismas y campos de texto libres no constituyen una lista) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 304.90 Tm (explícita de datos permitidos. Debe revisarse antes de usarlo con datos reales especialmente delicados.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 280.40 Tm (Criterio de evolución) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 255.00 Tm (Si se necesita mayor control, una mejora sería una lista de campos permitidos por recurso, por ejemplo nombre) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 240.50 Tm (y precio para productos, excluyendo texto libre. Esa mejora no está implementada y no debe confundirse con el) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 226.00 Tm (filtro actual.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 201.50 Tm (La activación de todos los 4xx responde a la necesidad de depuración del proyecto. En una aplicación con gran) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 187.00 Tm (volumen puede requerir un criterio más selectivo; no se cambió aquí esa decisión del usuario.) Tj ET
+0.85 0.86 0.90 RG 0.5 w 48 46 m 547 46 l S
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 48.00 31.00 Tm (Integración de Sentry · 02/10/2026) Tj ET
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 506.00 31.00 Tm (12 / 16) Tj ET
+endstream
+endobj
+28 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 27 0 R >>
+endobj
+29 0 obj
+<< /Length 3712 >>
+stream
+0.36 0.24 0.72 rg 48 790 34 4 re f
+BT /F2 8 Tf 0.36 0.24 0.72 rg 1 0 0 1 94.00 789.00 Tm (PROJECTFLOW  /  DOCUMENTACIÓN TÉCNICA) Tj ET
+BT /F2 22 Tf 0.16 0.12 0.32 rg 1 0 0 1 48.00 750.00 Tm (11. Ejemplo: crear producto devuelve 401) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 702.10 Tm (Situación) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 676.70 Tm (Una persona pulsa guardar un producto. La petición POST /products recibe 401. El fallo puede deberse a un) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 662.20 Tm (token ausente, caducado o rechazado; el estado por sí solo no permite distinguir la causa.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 637.70 Tm (Secuencia) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 612.30 Tm (El repositorio rechaza su promesa a través de Axios. El fallo llega a la mutación de productos y MutationCache) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 597.80 Tm (llama a reportError con resource=products, operation=create y source=mutation.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 573.30 Tm (reportError no descarta 401. Obtiene método, ruta y estado; extrae el cuerpo de config.data, lo depura y) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 558.80 Tm (construye un Error con mensaje HTTP 401. withScope adjunta el contexto solo a esa captura.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 534.30 Tm (La interfaz sigue mostrando su mensaje local de error. Sentry no vuelve a ejecutar la operación ni renueva el) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 519.80 Tm (token. El evento se filtra y se entrega al transporte configurado por el SDK.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 495.30 Tm (Representación ilustrativa) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 469.90 Tm (Mensaje: HTTP 401 Etiquetas: resource=products; operation=create; source=mutation Usuario: id="42", si hay) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 455.40 Tm (usuario en el store Contexto http: method="POST"; path="/products"; status=401 Contexto) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 440.90 Tm (request_payload.body: name="Mesa"; price=25 Campo sensible de ejemplo: access_token="[Filtered]") Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 416.40 Tm (Si no había cuerpo, no existe request_payload. Si el endpoint era de autenticación, tampoco. Si el cuerpo era) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 401.90 Tm (texto no JSON, aparece el marcador correspondiente en vez del texto original.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 377.40 Tm (Dónde buscarlo) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 352.00 Tm (En el proyecto de Sentry, localizar la incidencia y abrir un evento reciente, no solo el resumen agregado.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 337.50 Tm (Revisar etiquetas, usuario y los contextos http y request_payload. El nombre exacto de las secciones puede) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 323.00 Tm (variar en la interfaz remota.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 298.50 Tm (Los errores anteriores al cambio de configuración no se reenvían retroactivamente. Para comprobar la) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 284.00 Tm (integración nueva hay que recargar la aplicación y provocar un nuevo fallo. Un 401 repetido puede añadirse a) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 269.50 Tm (una incidencia existente en lugar de crear otra.) Tj ET
+0.85 0.86 0.90 RG 0.5 w 48 46 m 547 46 l S
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 48.00 31.00 Tm (Integración de Sentry · 02/10/2026) Tj ET
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 506.00 31.00 Tm (13 / 16) Tj ET
+endstream
+endobj
+30 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 29 0 R >>
+endobj
+31 0 obj
+<< /Length 4115 >>
+stream
+0.36 0.24 0.72 rg 48 790 34 4 re f
+BT /F2 8 Tf 0.36 0.24 0.72 rg 1 0 0 1 94.00 789.00 Tm (PROJECTFLOW  /  DOCUMENTACIÓN TÉCNICA) Tj ET
+BT /F2 22 Tf 0.16 0.12 0.32 rg 1 0 0 1 48.00 750.00 Tm (12. Pruebas y evidencia) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 702.10 Tm (Prueba automatizada local) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 676.70 Tm (Comando: node tests/sentry.test.mjs) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 652.20 Tm (El test carga los módulos TypeScript con jiti y configura un transporte de Sentry en memoria. Utiliza un DSN) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 637.70 Tm (ficticio y recoge los eventos; no valida la cuenta real ni necesita enviar las pruebas al proyecto remoto.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 613.20 Tm (La ejecución se repitió al preparar este documento y terminó correctamente. El nombre resumido del mensaje) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 598.70 Tm (de salida no enumera todas las aserciones; las pruebas incluyen también payloads.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 574.20 Tm (Casos comprobados) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 548.80 Tm (Cancelaciones sin evento. Errores 400, 401, 403, 404, 422 y 429 enviados. Reenvío del mismo objeto sin) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 534.30 Tm (duplicación. Captura de error 500 y fallo de red. Etiquetas de operación y recurso.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 509.80 Tm (Depuración de URLs, eliminación de breadcrumbs de consola, eliminación de email y extras en eventos.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 495.30 Tm (Depuración de URLs en spans. Consultas compartidas con tres intentos totales y un evento final. Mutación con) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 480.80 Tm (401 que conserva su callback local de error.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 456.30 Tm (Payload JSON serializado con campos legítimos conservados y campos sensibles filtrados. Omisión de) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 441.80 Tm (payloads de login y registro y del recurso auth. Ruta global de filterEvent con payload Axios. Referencias) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 427.30 Tm (circulares y cuerpo no JSON. Ausencia de cuerpo. Cliente desactivado sin envío.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 402.80 Tm (Compilación) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 377.40 Tm (npm run build pasó después de la última implementación. La salida avisó de Node 20.18.3 frente al mínimo) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 362.90 Tm (indicado por Vite de 20.19+ o 22.12+, y de un bundle superior a 500 kB. El build terminó, pero los avisos no) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 348.40 Tm (equivalen a mejoras ya realizadas.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 323.90 Tm (No demostrado por estas pruebas) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 298.50 Tm (No hay prueba de extremo a extremo de las pantallas de recuperación ni de navegación real. No se confirmó la) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 284.00 Tm (recepción del payload final en el panel remoto. El test no verifica toda la configuración de sentry.ts: prueba) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 269.50 Tm (funciones y un cliente construido específicamente para la prueba.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 245.00 Tm (La sincronización de login/logout, los spans reales del navegador, bloqueos de red, límites de cuota y el) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 230.50 Tm (comportamiento de CORS deben comprobarse funcionalmente. No se debe presentar la compilación o el) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 216.00 Tm (transporte simulado como prueba de entrega remota.) Tj ET
+0.85 0.86 0.90 RG 0.5 w 48 46 m 547 46 l S
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 48.00 31.00 Tm (Integración de Sentry · 02/10/2026) Tj ET
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 506.00 31.00 Tm (14 / 16) Tj ET
+endstream
+endobj
+32 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 31 0 R >>
+endobj
+33 0 obj
+<< /Length 4490 >>
+stream
+0.36 0.24 0.72 rg 48 790 34 4 re f
+BT /F2 8 Tf 0.36 0.24 0.72 rg 1 0 0 1 94.00 789.00 Tm (PROJECTFLOW  /  DOCUMENTACIÓN TÉCNICA) Tj ET
+BT /F2 22 Tf 0.16 0.12 0.32 rg 1 0 0 1 48.00 750.00 Tm (13. Comprobación y diagnóstico) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 702.10 Tm (Procedimiento de validación manual) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 676.70 Tm (1. Confirmar que el entorno de ejecución tiene VITE_SENTRY_DSN del proyecto correcto. Si cambia .env,) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 662.20 Tm (reiniciar el servidor de desarrollo. No copiar su contenido completo en un informe ni compartir credenciales.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 637.70 Tm (2. Abrir la aplicación, iniciar sesión y realizar una operación. Para comprobar el fallo de productos, usar un) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 623.20 Tm (escenario controlado que responda con error y revisar la petición en Network.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 598.70 Tm (3. Confirmar estado, método y ruta. Un 401 describe rechazo de autenticación; comprobar localmente si existe) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 584.20 Tm (Authorization, sin compartir el valor. Sentry no determina por sí solo si el token ha expirado.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 559.70 Tm (4. Revisar si se producen envíos a Sentry y si el navegador los bloquea. Una respuesta correcta al envelope es) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 545.20 Tm (una pista de transporte; revisar su tipo de contenido o el evento en el proyecto para confirmar que se trata de) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 530.70 Tm (una excepción.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 506.20 Tm (5. Buscar eventos recientes en el proyecto y entorno adecuados. Revisar una incidencia existente, su última) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 491.70 Tm (ocurrencia y el evento individual. Comparar operation y resource para identificar la acción.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 467.20 Tm (6. Verificar request_payload.body en una petición JSON fallida no relacionada con autenticación. Confirmar) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 452.70 Tm (campos filtrados y ausencia de cabeceras. Probar logout y otro error para comprobar que desaparece el usuario) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 438.20 Tm (asociado.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 413.70 Tm (Si no aparece un error) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 388.30 Tm (Comprobar DSN, entorno, filtros de búsqueda, rango horario, bloqueador del navegador y respuestas del) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 373.80 Tm (transporte. Después confirmar que la llamada usa el QueryClient compartido o reportError, y que no se absorbió) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 359.30 Tm (la excepción antes de llegar a esa capa.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 334.80 Tm (Una petición que responde 200 no se convierte en fallo solo porque la interfaz muestre un mensaje. Una) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 320.30 Tm (consulta con reintentos puede tardar en reportarse. Volver a pasar el mismo objeto Error por reportError) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 305.80 Tm (tampoco genera un segundo evento.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 281.30 Tm (Si aparece el error pero no el payload) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 255.90 Tm (Comprobar si realmente había cuerpo, si Axios guardó config.data, si la ruta era de autenticación, si el cuerpo) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 241.40 Tm (era JSON o si se excedieron límites. Los datos de la URL no se convierten en payload y se eliminan sus query) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 226.90 Tm (params.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 202.40 Tm (Si faltan trazas, recordar el muestreo de producción y que no toda petición constituye una traza independiente.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 187.90 Tm (Ningún paso de esta guía requiere dejar un error de prueba permanente en main.tsx.) Tj ET
+0.85 0.86 0.90 RG 0.5 w 48 46 m 547 46 l S
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 48.00 31.00 Tm (Integración de Sentry · 02/10/2026) Tj ET
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 506.00 31.00 Tm (15 / 16) Tj ET
+endstream
+endobj
+34 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 33 0 R >>
+endobj
+35 0 obj
+<< /Length 4507 >>
+stream
+0.36 0.24 0.72 rg 48 790 34 4 re f
+BT /F2 8 Tf 0.36 0.24 0.72 rg 1 0 0 1 94.00 789.00 Tm (PROJECTFLOW  /  DOCUMENTACIÓN TÉCNICA) Tj ET
+BT /F2 22 Tf 0.16 0.12 0.32 rg 1 0 0 1 48.00 750.00 Tm (14. Inventario y mantenimiento) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 702.10 Tm (Archivos de infraestructura) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 676.70 Tm (src/infrastucture/monitoring/sentry.ts: configuración, instrumentación de navegación, filtros y sincronización del) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 662.20 Tm (usuario.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 637.70 Tm (src/infrastucture/monitoring/errors.ts: captura común, deduplicación, metadatos HTTP y transformación de) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 623.20 Tm (excepciones.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 598.70 Tm (src/infrastucture/monitoring/payload.ts: exclusión de autenticación, extracción del cuerpo JSON y sanitización) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 584.20 Tm (limitada.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 559.70 Tm (src/infrastucture/monitoring/privacy.ts: filtros finales para eventos, breadcrumbs y spans.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 535.20 Tm (src/infrastucture/monitoring/queryClient.ts: callbacks comunes de QueryCache y MutationCache.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 510.70 Tm (Puntos de conexión) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 485.30 Tm (src/main.tsx inicializa la monitorización y configura las fronteras y callbacks de React. src/app/routes.tsx) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 470.80 Tm (envuelve el router e instala errorElement. src/app/provider/QueryProvider.tsx comparte el cliente configurado.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 446.30 Tm (src/presentation/components/ErrorRecovery.tsx implementa la recuperación visual y captura de rutas y raíz. Los) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 431.80 Tm (hooks useProducts, useTasks, useCategories, useLogin y useRegister aportan las etiquetas de recurso y) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 417.30 Tm (operación. tests/sentry.test.mjs verifica las principales reglas.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 392.80 Tm (Reglas al ampliar el proyecto) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 367.40 Tm (Usar el cliente común, declarar meta estable y evitar capturas repetidas en cada capa. No adjuntar AxiosError,) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 352.90 Tm (store, cabeceras o variables de formularios completos. Para errores manejados fuera de TanStack Query,) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 338.40 Tm (decidir explícitamente si deben pasar por reportError.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 313.90 Tm (Al añadir endpoints de autenticación, revisar exclusiones de payload. Al cambiar la política de errores o) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 299.40 Tm (privacidad, actualizar pruebas. Al actualizar Sentry, revisar tipos y comportamiento de sus integraciones: los) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 284.90 Tm (cambios de versión ya afectaron las opciones y el formato de spans durante esta implementación.) Tj ET
+BT /F2 12 Tf 0.36 0.24 0.72 rg 1 0 0 1 48.00 260.40 Tm (Decisiones que permanecen abiertas) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 235.00 Tm (No se implementó instrumentación del backend, propagación distribuida, source maps, releases, alertas) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 220.50 Tm (remotas, Session Replay ni políticas de retención del servicio. Tampoco una lista de campos de payload) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 206.00 Tm (permitidos por recurso.) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 181.50 Tm (Estas capacidades son ampliaciones posibles, no requisitos para que la captura frontend actual funcione. La) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 167.00 Tm (siguiente comprobación práctica es validar con un evento nuevo en el navegador que el proyecto remoto recibe) Tj ET
+BT /F1 10 Tf 0.16 0.20 0.27 rg 1 0 0 1 48.00 152.50 Tm (el error, sus etiquetas y el cuerpo depurado esperado.) Tj ET
+0.85 0.86 0.90 RG 0.5 w 48 46 m 547 46 l S
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 48.00 31.00 Tm (Integración de Sentry · 02/10/2026) Tj ET
+BT /F1 8 Tf 0.40 0.44 0.50 rg 1 0 0 1 506.00 31.00 Tm (16 / 16) Tj ET
+endstream
+endobj
+36 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 35 0 R >>
+endobj
+37 0 obj
+<< /Title (Integración de Sentry - ProjectFlow) /Author (Documentación del proyecto) /Subject (Arquitectura, errores, payloads, privacidad y verificación) >>
+endobj
+xref
+0 38
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000226 00000 n 
+0000000323 00000 n 
+0000000425 00000 n 
+0000002933 00000 n 
+0000003075 00000 n 
+0000005752 00000 n 
+0000005894 00000 n 
+0000009854 00000 n 
+0000009997 00000 n 
+0000013894 00000 n 
+0000014038 00000 n 
+0000018082 00000 n 
+0000018226 00000 n 
+0000022386 00000 n 
+0000022530 00000 n 
+0000026714 00000 n 
+0000026858 00000 n 
+0000030596 00000 n 
+0000030740 00000 n 
+0000034796 00000 n 
+0000034940 00000 n 
+0000038736 00000 n 
+0000038880 00000 n 
+0000043442 00000 n 
+0000043586 00000 n 
+0000048047 00000 n 
+0000048191 00000 n 
+0000051956 00000 n 
+0000052100 00000 n 
+0000056268 00000 n 
+0000056412 00000 n 
+0000060955 00000 n 
+0000061099 00000 n 
+0000065659 00000 n 
+0000065803 00000 n 
+trailer
+<< /Size 38 /Root 1 0 R /Info 37 0 R >>
+startxref
+65977
+%%EOF
