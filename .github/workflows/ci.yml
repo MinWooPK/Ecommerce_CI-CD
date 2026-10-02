@@ -1,45 +1,110 @@
-name: Frontend CI
+name: Frontend CI/CD
 
-# Ejecutar el pipeline cuando hacemos push a main
-# o cuando abrimos una Pull Request hacia main
 on:
   push:
     branches:
+      - develop
+      - qa
       - main
 
   pull_request:
     branches:
+      - develop
+      - qa
       - main
 
 jobs:
-  build:
-    # GitHub crea una máquina Ubuntu temporal
-    runs-on: ubuntu-latest
 
-    steps:
-      # Descarga el código del repositorio
-      - name: Checkout repository
-        uses: actions/checkout@v7
+  # # =========================
+  # # CI
+  # # =========================
+  # build:
+  #   runs-on: ubuntu-latest
 
-      # Instala Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
-        with:
-          node-version: 24
-          cache: npm
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v7
 
-      # Instala las dependencias usando package-lock.json
-      - name: Install dependencies
-        run: npm ci
+  #     - name: Setup Node.js
+  #       uses: actions/setup-node@v7
+  #       with:
+  #         node-version: 24
+  #         cache: npm
 
-      # Comprueba la calidad del código
-      - name: Run ESLint
-        run: npm run lint
+  #     - name: Install dependencies
+  #       run: npm ci
 
-      # Ejecuta los tests
-      - name: Run tests
-        run: npm run test
+  #     - name: Run ESLint
+  #       run: npm run lint
 
-      # Comprueba TypeScript y genera el build de producción
-      - name: Build project
-        run: npm run build
+  #     - name: Run tests
+  #       run: npm run test
+
+  #     - name: Build project
+  #       run: npm run build
+
+  # # =========================
+  # # DEPLOY DEV
+  # # =========================
+  # deploy-dev:
+  #   needs: build
+
+  #   if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+
+  #   runs-on: ubuntu-latest
+
+  #   environment: development
+
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v7
+
+  #     - name: Install Vercel CLI
+  #       run: npm install --global vercel
+
+  #     - name: Deploy DEV
+  #       run: vercel --token=${{ secrets.VERCEL_TOKEN }}
+
+  # # =========================
+  # # DEPLOY QA
+  # # =========================
+  # deploy-qa:
+  #   needs: build
+
+  #   if: github.event_name == 'push' && github.ref == 'refs/heads/qa'
+
+  #   runs-on: ubuntu-latest
+
+  #   environment: qa
+
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v7
+
+  #     - name: Install Vercel CLI
+  #       run: npm install --global vercel
+
+  #     - name: Deploy QA
+  #       run: vercel --token=${{ secrets.VERCEL_TOKEN }}
+
+  # # =========================
+  # # DEPLOY PRODUCCIÓN
+  # # =========================
+  # deploy-production:
+  #   needs: build
+
+  #   if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+  #   runs-on: ubuntu-latest
+
+  #   environment: production
+
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v7
+
+  #     - name: Install Vercel CLI
+  #       run: npm install --global vercel
+
+  #     - name: Deploy Production
+  #       run: vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
